@@ -44,7 +44,6 @@ class WithholdingTax
      */
     public function getTarifForWage(int $year, float $wage, float $rate_determining_income): array
     {
-        print_r(self::filePath($year, $this->canton));
         $handle = fopen(self::filePath($year, $this->canton), 'r');
         $validLine = null; // init as false
         $code = strtoupper($this->code);
@@ -89,7 +88,7 @@ class WithholdingTax
         ];
     }
 
-    public static function getCodesForCanton($year, $canton): array
+    public static function getCodesForCanton(int $year, Canton $canton): array
     {
         $handle = fopen(self::filePath($year, $canton), 'r');
         $arr = [];

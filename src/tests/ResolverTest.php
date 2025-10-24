@@ -21,16 +21,22 @@ class ResolverTest extends TestCase
         $this->assertIsArray($out);
     }
 
-    public function test_wrongCode()
+    public function test_wrong_code()
     {
         $this->expectException(InvalidArgumentException::class);
         $class = new WithholdingTax(Canton::AG, 'S1U');
     }
 
-    public function test_missingYear()
+    public function test_missing_year()
     {
         $this->expectException(YearNotFoundException::class);
         $class = new WithholdingTax(Canton::AG, 'A1N');
         $class->resolve(2000, 650.30, 120.0);
+    }
+
+    public function test_canton_files()
+    {
+        $out = WithholdingTax::getCodesForCanton(2024, Canton::LU);
+        $this->assertIsArray($out);
     }
 }
