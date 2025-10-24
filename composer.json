@@ -14,5 +14,7 @@
             "email": "samuel.schwegler@gmx.ch"
         }
     ],
-    "require": {}
+    "require": {
+      "php": ">=8.3"
+    }
 }
