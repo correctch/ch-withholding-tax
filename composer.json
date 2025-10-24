@@ -1,0 +1,18 @@
+{
+    "name": "correctch/ch-withholding-tax",
+    "description": "Withholding Taxes for Swiss Cantons",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Correctch\\ChWithholdingTax\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Samuel Schwegler",
+            "email": "samuel.schwegler@gmx.ch"
+        }
+    ],
+    "require": {}
+}
