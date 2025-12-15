@@ -13,6 +13,10 @@ class ResolverTest extends TestCase
     public function test_resolver()
     {
         $class = new WithholdingTax(Canton::AG, 'A0N');
+        $out = $class->resolve(2026, 6500.00, 6500.00);
+        $this->assertIsArray($out);
+
+        $class = new WithholdingTax(Canton::AG, 'A0N');
         $out = $class->resolve(2025, 6500.00, 6500.00);
         $this->assertIsArray($out);
 

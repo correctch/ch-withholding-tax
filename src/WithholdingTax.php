@@ -30,8 +30,8 @@ class WithholdingTax
      */
     public function resolve(int $year, float $wage, float $rate_determining_income): array
     {
-        if($year < 2016 || $year > 2025) {
-            throw new YearNotFoundException($year. 'does not exists in this package');
+        if($year < 2016 || $year > 2026) {
+            throw new YearNotFoundException($year. ' does not exists in this package');
         }
 
         return $this->getTarifForWage($year, $wage, $rate_determining_income);
